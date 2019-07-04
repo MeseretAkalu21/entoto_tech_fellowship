@@ -1,0 +1,17 @@
+.signborder{
+border:10px solid grey;
+border-radius: 500px;  
+padding-top: 50px;
+padding-right: 30px;
+padding-bottom: 50px;
+padding-left: 80px;
+}
+
+.borderdiv{
+    border: 2px solid;
+    color:black;
+    border-radius: 50px;
+    margin-left:450px;
+    margin-right: 450px;
+    margin-top: 20px;
+}

@@ -1,0 +1,51 @@
+                              
+                                    SQL Function
+
+1. AVG
+SELECT AVG(age) AS ageAverage FROM but;
+
+2.COUNT
+  SELECT COUNT(studentID) AS OrdersFromstudentID4 FROM record
+  WHERE studentID=4;
+
+3. LAST() Function
+  SELECT studentID FROM record
+  ORDER BY studentID DESC
+  LIMIT 1; 
+4.  MAX
+   SELECT MAX(adress) FROM but;
+5.MIN
+  SELECT MIN(adress) FROM but;
+6.SUM
+  SELECT SUM(adress) FROM but;
+7.Group By
+ SELECT record.studentID,COUNT(but.name) AS NumberOfrecord FROM record  
+ LEFT JOIN but
+ ON record.id_list=but.id_list
+ GROUP BY name
+
+
+8.first function
+ SELECT adress FROM but
+ ORDER BY age ASC
+ LIMIT 2
+
+9.MID() Function
+   
+    SELECT MID(id_list,1,4) AS record                         //  The MID() function is used to extract characters from a text field.
+    FROM but; 
+
+
+
+10. Length  Function
+     
+      SELECT studentname,LENGTH(id_list) as LengthOfid_list
+       FROM record
+11.round Function
+
+   SELECT studentname, ROUND(studentID) AS RoundedstudentID
+   FROM record; 
+
+12.format  Function
+   
+    SELECT FORMAT(id_list,format) FROM but;

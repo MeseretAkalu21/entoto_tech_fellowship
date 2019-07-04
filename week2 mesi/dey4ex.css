@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+    width: 300px;
+    height: 250px;
+    background-color: lightgrey;
+}
+
+.flex-item {
+    background-color: cornflowerblue;
+    width: 100px;
+    height: 100px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="flex-container">
+  <div class="flex-item">B</div>
+  <div class="flex-item">C</div>
+  <div class="flex-item">D</div>
+
+  <div class="flex-item">A</div>  
+</div>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_wrap-reverse by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Mar 2016 11:03:00 GMT -->
+</html>

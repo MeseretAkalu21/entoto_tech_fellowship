@@ -1,0 +1,294 @@
+
+
+1. SELECT * FROM `but` WHERE 
+    //This statment display all of the DB register display
+
+
+2. SELECT name,country FROM but; 
+   // This statment selects name and country  and display it
+
+
+3.  SELECT DISTINCT adress FROM but;
+   // This statment  used to return only distinct (different) values display all of adress dfferet adress display . 
+
+
+4.  SELECT * FROM but
+    WHERE Country='Desa';
+    // This statement selects all the but from the country "Desa", in the "but" table display.
+
+
+5. SELECT * FROM but
+   WHERE Country='marikos'
+   AND adress='Bahrdar';
+   // This statment The AND & OR operators are used to filter records based on more than one condition. 
+   
+
+6.  SELECT * FROM Customers
+    ORDER BY Country; 
+                          
+                           // This statment The ORDER BY keyword sorts the records in ascending order by default.
+                                  To sort the records in a descending order, you can use the DESC keyword.
+  SELECT * FROM Customers
+  ORDER BY Country DESC;
+
+7. DELETE FROM  but
+   WHERE name='Almaz' AND adress='Bahrdar'; 
+    
+    // This statment delete from registar database selact delate of the selacte database
+
+8. SELECT * FROM but WHERE id_list = 5 or 1=1    //This statment is the same of no1 statement and select from id list this statment select
+
+  SELECT id_list, Name, country FROM but WHERE id_list = 4 or 1=1
+
+9.INSERT INTO but (name, adress,id_list ,country, gender, age)
+  VALUES ('redu','hawasa','gamo','female','22');               // Insert This statment is the new row of table add the new name and table.
+
+
+
+10.UPDATE but
+   SET name='Mesi',country='Hamburg'   // This statment update the new table of creat the table.
+
+   WHERE name='kalu'; 
+
+
+11.SELECT *
+   FROM Persons          // Selact Top This statment selact row, colomen of selact
+   LIMIT 5;
+
+12. SELECT * FROM but
+    WHERE adress LIKE 'Mi%';       //The LIKE operator is used in a selact  the database table  example adress and contry of selact
+
+
+13. wildcard
+   
+    SELECT * FROM but
+    WHERE country LIKE '%ga%';    // This statment A wildcard character can be used to substitute for any other  the database table the same character display
+
+
+14. SELECT * FROM but
+    WHERE age BETWEEN 23 AND 24; 
+                                   // The BETWEEN operator selects values within a range. The values can be numbers, age or adress the santer of display
+    SELECT * FROM but                     
+    WHERE name BETWEEN 'Abebe' AND 'mamay'; 
+
+
+15. Aliases 
+
+     SELECT name, CONCAT(adress,', ',country,', ',gender,', ') AS adress
+     FROM but                                    
+                        
+                       //Basically aliases are created to make column names more readable. 
+                      
+
+16. JOIN
+
+   SELECT record.studentname, but.adress
+   FROM record 
+   INNER JOIN but                      // The join statement JOIN clause is used to combine rows from two or more tables, based on a common field between them.
+   ON record.id_list=but.id_list; 
+
+
+
+17. INNER JOIN
+
+     SELECT studentID 
+     FROM recourd
+     INNER JOIN but
+     ON record.id_list=but.id_list;    // The INNER JOIN keyword selects all rows from both tables as long as there is a match between the columns in both tables.
+
+
+18. LEFT JOIN    
+
+    SELECT record.studentname, but.name      //The LEFT JOIN keyword returns all rows from the left table (recourd), with the matching rows in the right table (but). 
+    FROM  but                                  The result is NULL in the right side when there is no match.
+    LEFT JOIN record                                
+    ON but.name=record.studentID
+    ORDER BY but.name                       
+
+19. RIGHT JOIN
+    SELECT record.studentID, but.adress    //The RIGHT JOIN keyword returns all rows from the right table (but), with the matching rows in the left table (recourd).
+    FROM record                               The result is NULL in the left side when there is no match.
+    RIGHT JOIN but 
+    ON record.studentID=but.adress
+    ORDER BY record.studentID          
+                   
+20. UNION
+
+   SELECT id_list FROM but
+   UNION 
+   SELECT  id_list FROM record        // The UNION operator is used to combine the result-set of two or more SELECT statements.
+
+
+21.SELECT INTO                      // This statment the information one table from another table.
+     SELECT *
+     INTO butsBackup2013
+     FROM  but;
+
+22. creat the database  used to the database
+23. create the table used to the table
+
+24.INSERT INTO Customers (CustomerName, Country)   //The INSERT INTO SELECT statement selects data from one table and inserts it into an existing table. 
+                                                      Any existing rows in the target table are unaffected.
+   SELECT SupplierName, Country FROM Suppliers; 
+
+25.SELECT *                                      //The SELECT INTO statement copies data from one table and inserts it into a new table.
+
+26.Constraint
+   CREATE TABLE PersonsNotNull
+   (
+   P_Id int NOT NULL,
+   LastName varchar(255) NOT NULL,       // This statment used to creat the new table
+   FirstName varchar(255),
+   Address varchar(255),
+   City varchar(255)
+   )
+
+27. UNIQUE Constraint
+
+   CREATE TABLE Persons
+   (
+   P_Id int NOT NULL UNIQUE,
+   LastName varchar(255) NOT NULL,    // The UNIQUE constraint uniquely identifies each record in a database table.
+   FirstName varchar(255),
+   Address varchar(255),
+   City varchar(255)
+   ) 
+
+
+
+
+
+28. PRIMARY KEY rahal 
+   
+    CREATE TABLE Persons
+    (
+    P_Id int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255),                                      // This statment The PRIMARY KEY constraint uniquely identifies each record in a database table.
+    PRIMARY KEY (P_Id)
+    )                                                           Primary keys must contain UNIQUE values.
+                                                               A primary key column cannot contain NULL values.
+                                                               Most tables should have a primary key, and each table can have only ONE primary key.
+   
+
+   CREATE TABLE rahal
+   (
+   P_Id int NOT NULL,
+   LastName varchar(255) NOT NULL,
+   FirstName varchar(255),
+   Address varchar(255),
+   City varchar(255),
+   CONSTRAINT pk_PersonID PRIMARY KEY (P_Id,LastName)
+   )
+
+
+29. FOREIGN KEY Constraint
+
+    CREATE TABLE Orders
+    (                                                // A FOREIGN KEY in one table points to a PRIMARY KEY in another table.
+    O_Id int NOT NULL,                                  Let's illustrate the foreign key with an example. Look at the following two tables:
+    OrderNo int NOT NULL,                  
+     P_Id int,
+    PRIMARY KEY (O_Id),
+    FOREIGN KEY (P_Id) REFERENCES Persons(P_Id)
+    )                                                        
+
+30.
+
+  CREATE TABLE Persons
+  (
+  P_Id int NOT NULL,
+  LastName varchar(255) NOT NULL,
+  FirstName varchar(255),                         //The CHECK constraint is used to limit the value range that can be placed in a column.
+  Address varchar(255),                              If you define a CHECK constraint on a single column it allows only certain values for this column.
+  City varchar(255),
+  CHECK (P_Id>0)
+  )                                                
+
+
+
+
+31.
+   CREATE INDEX PIndex                          // this statment the database creat of display 
+   ON Persons (LastName)                           An index can be created in a table to find data more quickly and efficiently.
+                                                   The users cannot see the indexes, they are just used to speed up searches/queries.
+   
+   CREATE INDEX person
+   ON Persons (LastName, FirstName)
+
+
+32. ALTER TABLE 
+    
+  ALTER TABLE Persons                        // This statment the database create of remove and delat of the boutn The ALTER TABLE statement is used to add, delete, or modify columns in an existing table.
+  DROP COLUMN Address
+
+
+33. AVG() Function
+    
+    SELECT ProductName, Price FROM Products
+    WHERE Price>(SELECT AVG(Price) FROM Products);  //This statment the avaraje fo=unction of the numeric column. 
+
+
+34. GROUP BY
+
+  SELECT record.studentID,COUNT(but.name) AS NumberOfrecord FROM record   // The GROUP BY statement is used in conjunction with the aggregate functions to group the result-set by one or more columns.
+  LEFT JOIN but
+  ON record.id_list=but.id_list
+  GROUP BY name
+
+35.  HAVING Clause
+                                                    
+  SELECT but.name, COUNT(record.studentID) AS NumberOfrecord FROM (record
+  INNER JOIN but
+  ON record.id_list=but.id_list)
+  GROUP BY name
+  HAVING COUNT(record.studentID) > 10;                             // The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions. 
+
+
+
+36.  UCASE
+      
+    SELECT UCASE(studentname) AS record,id_list                  // The UCASE() function converts the value of a field to uppercase.
+    FROM record;
+
+
+37.LCASE
+
+    SELECT LCASE(studentname) AS record,id_list                  // The LCASE() function converts the value of a field to lowercase.
+    FROM record;
+
+38. MID() Function
+   
+    SELECT MID(id_list,1,4) AS record                         //  The MID() function is used to extract characters from a text field.
+    FROM but; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                

@@ -1,0 +1,77 @@
+img{
+    width:200px;
+    height: 200px;
+    
+}
+
+.pic{
+    border-radius: 30px;
+    border: 1px solid darkslategrey;
+}
+
+.flex-box-container{
+    display: flex;
+   
+    align-content: flex-end;
+    flex-direction: row-reverse;
+    justify-content:space-between;
+    margin-right: 100px;
+    margin-top: 80px;
+
+   
+}
+.flex-box-container2{
+    display: flex;
+   
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content:space-between;
+   margin-right: 50px;
+   margin-left: 50px;
+
+   
+}
+
+.flex-box{
+   
+    justify-content:space-between;
+    align-content: flex-end;
+}
+a{
+    font-size: 30px;
+    color:darkslateblue;
+    padding: 10px;
+    text-decoration: none;
+}
+ .pa  {
+     width : 18%;
+     margin-top: 30px;
+     font-size: 10px;
+ }
+ li{
+     margin-left:5px;
+ }
+ .pslayout{
+   
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 30px;
+    font-size: 10px;
+ }
+ .signupBorder{
+
+border: 5px blue solid;
+border-radius: 30px;
+margin-left:450px;
+margin-right: 300px;
+padding-bottom: 20px;
+text-align:center;
+font-size: 10px;
+ }
+
+ .courselayout{
+     width:30%;
+     font-size: 10px;
+     margin-left: 10px;
+ }
+ 

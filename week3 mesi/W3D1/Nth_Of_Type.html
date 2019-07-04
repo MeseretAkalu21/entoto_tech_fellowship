@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>nth-of-type</title>
+    <style> 
+  div:nth-of-type(2){
+        display: -webkit-flex;
+        display: flex;
+        width: 400px;
+        height: 400px;
+        background-color: gray;
+    }
+      .flex-item1,.flex-item2,.flex-item3{
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 10px;
+         width: 100px;
+         height: 100px;
+         background-color: blueviolet;
+
+      } 
+    </style>
+</head>
+    
+
+<body>
+    <div class="flex-container">
+        <div class="flex-item1">Box1</div>
+        <div class="flex-item2">Box2</div>
+        <div class="flex-item3">Box3</div>  
+    </div>
+</body>
+</html>

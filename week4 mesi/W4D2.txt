@@ -1,0 +1,144 @@
+
+1. JOIN
+
+   SELECT record.studentname, but.adress
+   FROM record 
+   INNER JOIN but                      // The join statement JOIN clause is used to combine rows from two or more tables, based on a common field between them.
+   ON record.id_list=but.id_list; 
+
+
+
+2. INNER JOIN
+
+     SELECT studentID 
+     FROM recourd
+     INNER JOIN but
+     ON record.id_list=but.id_list;    // The INNER JOIN keyword selects all rows from both tables as long as there is a match between the columns in both tables.
+
+
+3. LEFT JOIN    
+
+    SELECT record.studentname, but.name      //The LEFT JOIN keyword returns all rows from the left table (recourd), with the matching rows in the right table (but). 
+    FROM  but                                  The result is NULL in the right side when there is no match.
+    LEFT JOIN record                                
+    ON but.name=record.studentID
+    ORDER BY but.name                       
+
+4. RIGHT JOIN
+    SELECT record.studentID, but.adress    //The RIGHT JOIN keyword returns all rows from the right table (but), with the matching rows in the left table (recourd).
+    FROM record                               The result is NULL in the left side when there is no match.
+    RIGHT JOIN but 
+    ON record.studentID=but.adress
+    ORDER BY record.studentID          
+                   
+5. UNION
+
+   SELECT id_list FROM but
+   UNION 
+   SELECT  id_list FROM record        // The UNION operator is used to combine the result-set of two or more SELECT statements.
+
+
+6.SELECT INTO                      // This statment the information one table from another table.
+     SELECT *
+     INTO butsBackup2013
+     FROM  but;
+
+7. creat the database  used to the database
+8. create the table used to the table
+
+9.INSERT INTO Customers (CustomerName, Country)   //The INSERT INTO SELECT statement selects data from one table and inserts it into an existing table. 
+                                                      Any existing rows in the target table are unaffected.
+   SELECT SupplierName, Country FROM Suppliers; 
+
+10.SELECT *                                      //The SELECT INTO statement copies data from one table and inserts it into a new table.
+
+11.Constraint
+   CREATE TABLE PersonsNotNull
+   (
+   P_Id int NOT NULL,
+   LastName varchar(255) NOT NULL,       // This statment used to creat the new table
+   FirstName varchar(255),
+   Address varchar(255),
+   City varchar(255)
+   )
+
+12. UNIQUE Constraint
+
+   CREATE TABLE Persons
+   (
+   P_Id int NOT NULL UNIQUE,
+   LastName varchar(255) NOT NULL,    // The UNIQUE constraint uniquely identifies each record in a database table.
+   FirstName varchar(255),
+   Address varchar(255),
+   City varchar(255)
+   ) 
+
+
+
+
+
+13. PRIMARY KEY rahal 
+   
+    CREATE TABLE Persons
+    (
+    P_Id int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255),                                      // This statment The PRIMARY KEY constraint uniquely identifies each record in a database table.
+    PRIMARY KEY (P_Id)
+    )                                                           Primary keys must contain UNIQUE values.
+                                                               A primary key column cannot contain NULL values.
+                                                               Most tables should have a primary key, and each table can have only ONE primary key.
+   
+
+   CREATE TABLE rahal
+   (
+   P_Id int NOT NULL,
+   LastName varchar(255) NOT NULL,
+   FirstName varchar(255),
+   Address varchar(255),
+   City varchar(255),
+   CONSTRAINT pk_PersonID PRIMARY KEY (P_Id,LastName)
+   )
+
+
+14. FOREIGN KEY Constraint
+
+    CREATE TABLE Orders
+    (                                                // A FOREIGN KEY in one table points to a PRIMARY KEY in another table.
+    O_Id int NOT NULL,                                  Let's illustrate the foreign key with an example. Look at the following two tables:
+    OrderNo int NOT NULL,                  
+     P_Id int,
+    PRIMARY KEY (O_Id),
+    FOREIGN KEY (P_Id) REFERENCES Persons(P_Id)
+    )                                                        
+
+15.
+
+  CREATE TABLE Persons
+  (
+  P_Id int NOT NULL,
+  LastName varchar(255) NOT NULL,
+  FirstName varchar(255),                         //The CHECK constraint is used to limit the value range that can be placed in a column.
+  Address varchar(255),                              If you define a CHECK constraint on a single column it allows only certain values for this column.
+  City varchar(255),
+  CHECK (P_Id>0)
+  )                                                
+
+
+
+
+16.
+   CREATE INDEX PIndex                          // this statment the database creat of display 
+   ON Persons (LastName)                           An index can be created in a table to find data more quickly and efficiently.
+                                                   The users cannot see the indexes, they are just used to speed up searches/queries.
+   
+   CREATE INDEX person
+   ON Persons (LastName, FirstName)
+
+
+17. ALTER TABLE 
+    
+  ALTER TABLE Persons                        // This statment the database create of remove and delat of the boutn The ALTER TABLE statement is used to add, delete, or modify columns in an existing table.
+  DROP COLUMN Address
