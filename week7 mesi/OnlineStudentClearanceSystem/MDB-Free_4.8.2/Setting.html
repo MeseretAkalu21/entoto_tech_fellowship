@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+  
+  
+  <style> 
+        .change{
+/*            margin-top: 100px;
+            margin-right: 0px;
+            margin-bottom: 100px;
+            margin-left: 10px;*/
+           background-color: lightblue;
+           width: 500px;
+           height: 500px;
+           alignment-adjust: central;
+           margin: 10% 10% 40% 30%;
+           padding: 2%;
+        }
+        .footer-copyright text-center py-3{
+            
+        }
+    </style>
+    </head>
+        <body>
+        <header>
+  <nav class="navbar fixed-top navbar-expand-lg rgba(63, 81, 181, 0.3) rgba-indigo-light">
+    <a class="navbar-brand" href="#"><strong>Online Clearance</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          
+        <li class="nav-item active">
+          <a class="nav-link" href="home">Back Home <span class="sr-only">(current)</span></a>
+        </li>
+    </div>
+  </nav>
+       <!-- Default form subscription -->
+        </header>
+<div class="change">
+    <form class="text-center" style="color: black;" action="../model/update.php" method="post" name="users">
+        <h4> Change Password<h4>
+                <h6>username</h6><input type="text" id="user" name="user"/></br><br>
+
+      <h6>Old Password</h6><input type="password" id="pass"  name="pass"><br><br>
+      <!-- Password -->
+      <h6>New Password</h6><input type="password" id="pass"  name=" newpass"><br><br>
+    <h6>Confirm Password</h6><input type="password" id="pass"  name=" confirmpass"><br><br>
+    <button  type="submit" onclick="validate()">Change Password</button><br> <!-- Register -->
+    </form>
+</div>
+
+      <script>
+         
+          function validate(){
+var pass =document.forms["users"]["newpass"].value;
+var confirmpass= document.forms["users"]["confirmpass"].value;
+
+if(pass !== confirmpass){
+   alert("New Password doesn't match")
+    header("Location: OnlineStudentClearanceSystem\model\update.php");
+}
+}
+</script>
+      
+<!-- Footer -->
+<footer class="rgba(63, 81, 181, 0.3) rgba-indigo-light">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+      <!-- Grid column -->
+    </div>
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+  <a href="Home.html">online student clearance system </a>
+  </div>
+  <!-- Copyright -->
+
+</footer> 
+
+        <!-- SCRIPTS -->
+  <!-- JQuery -->
+   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>   
+        
+    </body>
+</html>
